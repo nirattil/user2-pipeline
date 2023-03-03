@@ -20,7 +20,7 @@ jobs:
     runs-on: [ self-hosted, tutorial-be-dev, vm-user2SelfHost-az-usw3-sbx-001 ]
     environment:
       name: sit
-      url: https://sit-user2-web.azure101.ml/swagger/index.html
+      url: https://app-user2-az-usw3-uat-001.azurewebsites.net/swagger/index.html
     
     steps:
     - name: Download Artifact
@@ -55,5 +55,5 @@ jobs:
       with:
         token: ${{ secrets.WORKFLOW_TOKEN }}
         repository: ${{ env.REPOSITORY }}
-        event-type: <username>-tutorial-be-dast-sit
+        event-type: user2-tutorial-be-dast-sit
         client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
